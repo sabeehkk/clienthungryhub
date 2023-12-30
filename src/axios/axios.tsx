@@ -3,7 +3,7 @@ import { ErrorMessage } from "../utils/util";
 // import { ErrorMessage } from "../utils/utils";
 
 // Define base URL from environment variables
-const VITE_USER_BACKEND_URL = import.meta.env.VITE_USER_BACKEND_URLL;
+const VITE_USER_BACKEND_URL = " https://hungryhubbackend.evolux.cloud"
 
 // Define role-specific paths
 const userPath = "";
