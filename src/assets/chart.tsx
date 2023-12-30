@@ -12,7 +12,7 @@ const Chart = ({ totalSaleData }) => {
     x: new Date(dataPoint._id).getTime(),
     y: dataPoint.total,
   }));
-
+  
   const seriesData = [
     {
       name: 'Total Sale',
@@ -58,7 +58,7 @@ const Chart = ({ totalSaleData }) => {
 
   return (
     <div id="chart">
-      <ReactApexChart options={chartOptions} series={seriesData} type="area" height={350} />
+      <ReactApexChart  series={seriesData} type="area" height={350} />
     </div>
   );
 };

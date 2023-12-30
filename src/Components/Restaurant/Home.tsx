@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState} from 'react';
 import { useSelector } from "react-redux";
@@ -6,7 +7,7 @@ import { FaShopify } from 'react-icons/fa';
 import { BiSolidUserAccount } from 'react-icons/bi';
 import { restaurentAxios } from '../../axios/axios';
 import PieChart from '../../assets/pieChart'; 
-import Chart from '../../assets/chart';
+// import Chart from '../../assets/chart';
 
 const RestaurantDashboard = () => {
   const [dashBordDatas,setDashBoardDatas] = useState<any>()
@@ -83,7 +84,7 @@ let result = restaurant.restaurent;
       </div>
       <div className='w-full'>
         <div className=''>
-        <Chart totalSaleData={dashBordDatas?.totalSale}/>
+        {/* <Chart totalSaleData={dashBordDatas?.totalSale}/> */}
         </div>
       </div>
     </div>
