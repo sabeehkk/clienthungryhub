@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import ReactApexChart from 'react-apexcharts';
 
 const Chart = ({ totalSaleData }) => {
@@ -12,7 +9,7 @@ const Chart = ({ totalSaleData }) => {
     x: new Date(dataPoint._id).getTime(),
     y: dataPoint.total,
   }));
-  
+
   const seriesData = [
     {
       name: 'Total Sale',
@@ -58,7 +55,7 @@ const Chart = ({ totalSaleData }) => {
 
   return (
     <div id="chart">
-      <ReactApexChart  series={seriesData} type="area" height={350} />
+      <ReactApexChart options={chartOptions} series={seriesData} type="area" height={350} />
     </div>
   );
 };

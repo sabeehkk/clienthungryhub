@@ -6,8 +6,8 @@ import { RiFileList3Fill } from 'react-icons/ri';
 import { FaShopify } from 'react-icons/fa';
 import { BiSolidUserAccount } from 'react-icons/bi';
 import { restaurentAxios } from '../../axios/axios';
-import PieChart from '../../assets/pieChart'; 
-// import Chart from '../../assets/chart';
+// import PieChart from '../../assets/pieChart'; 
+import Chart from '../../assets/chart';
 
 const RestaurantDashboard = () => {
   const [dashBordDatas,setDashBoardDatas] = useState<any>()
@@ -84,7 +84,7 @@ let result = restaurant.restaurent;
       </div>
       <div className='w-full'>
         <div className=''>
-        {/* <Chart totalSaleData={dashBordDatas?.totalSale}/> */}
+        <Chart totalSaleData={dashBordDatas?.totalSale}/>
         </div>
       </div>
     </div>
