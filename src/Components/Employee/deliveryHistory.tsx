@@ -1,15 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { Fragment, useEffect, useState } from "react";
-import { employeeAxios, userAxios } from "../../axios/axios";
+import { Fragment, useEffect, useState } from "react";
+import { employeeAxios } from "../../axios/axios";
 import { restaurentAxios } from "../../axios/axios";
 import { useSelector } from "react-redux";
 import { ErrorMessage } from "../../utils/util";
 import { useNavigate } from "react-router-dom";
+import { BiSolidChat } from "react-icons/bi";
+
 
 function DeliveryHistoryItem() {
   const [deliveryHistory, setDeliveryHistory] = useState<any>();
   const employee = useSelector((state:any) => state.employeeAuth);
   const navigate = useNavigate();
+
+  const ChatIcon = () => {
+    return <BiSolidChat style={{ fontSize: "20px "   }} />;
+  };
 
   useEffect(() => {
     if (!employee.employee || !employee.employee._id) {
@@ -111,13 +117,13 @@ function DeliveryHistoryItem() {
                   </div>
                 </div>
                 <div>
-                  <button
-                    className="p-1 w-20 ml-5 border border-transparent text-white rounded bg-teal-500 shadow-md hover:bg-teal-400"
+                <button
+                    className="p-1 w-20 ml-5 border border-transparent text-white rounded bg-teal-500 shadow-md hover:bg-teal-400 flex items-center"
                     onClick={() => {
                       handleChat(delivery._id);
                     }}
                   >
-                    Chat
+                     <ChatIcon />  <span className="ml-2">Chat</span>
                   </button>
                 </div>
                 <div className="bg-white text-white rounded-full p-2">
