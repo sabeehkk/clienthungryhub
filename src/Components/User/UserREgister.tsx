@@ -70,8 +70,8 @@ export default function Signup() {
         };
         await SignupApi(userData);
       }
-      if (result.data.message == error) {
-        console.log(error.message);
+      if (result.data.message == 'error') {
+        console.log(result.data.message);
       }
     } catch (error) {
       ErrorMessage(error);

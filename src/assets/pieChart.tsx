@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
 const PieChart = () => {
-  const [chartData, setChartData] = useState({
+  const [chartData, setChartData] = useState<any>({
     series: [44, 55, 13, 43, 22],
     options: {
       chart: {

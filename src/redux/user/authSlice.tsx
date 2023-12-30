@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { userInittalModel, UserData } from "../../models/models";
 import produce from 'immer';

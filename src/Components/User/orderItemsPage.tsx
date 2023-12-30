@@ -1,32 +1,32 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Swal from "sweetalert2";
-import { toast } from "react-toastify";
+// import Swal from "sweetalert2";
+// import { toast } from "react-toastify";
 import { userAxios } from "../../axios/axios";
 import OrderTrack from "../../assets/orderTrack";
 import { useNavigate, useParams } from "react-router-dom";
-import PAgination from "../../Components/pagination";
+// import PAgination from "../../Components/pagination";
 import { SuccessMessage, SwalAlert } from "../../utils/util";
 
 function OrderItems() {
   let total = 0;
-  let charges = 0;
-  let discount = 0;
-  let grandTotal = 0;
+  // let charges = 0;
+  // let discount = 0;
+  // let grandTotal = 0;
   const [orderItem, setOrderItem] = useState<any>();
   const [is_chage, setChange] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [itemData, setItemDta] = useState<any>({});
   const navigate = useNavigate();
   const { ordId } = useParams();
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const handlePageChange = (page:any) => {
-    setCurrentPage(page);
-  };
-  const itemsPerPage = 5;
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
+  // const [currentPage, setCurrentPage] = useState<number>(1);
+  // const handlePageChange = (page:any) => {
+  //   setCurrentPage(page);
+  // };
+  // const itemsPerPage = 5;
+  // const startIndex = (currentPage - 1) * itemsPerPage;
+  // const endIndex = startIndex + itemsPerPage;
   const user = useSelector((state:any) => state.userAuth);
   useEffect(() => {
     userAxios.get(`/orderItems?id=${ordId}`).then((response) => {
@@ -183,7 +183,7 @@ function OrderItems() {
         </div>
       </div>
       <div className="float- mr-3 mt-3">
-        <PAgination />
+        {/* <PAgination /> */}
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -14,14 +15,14 @@ import { ErrorMessage, SuccessMessage } from "../../utils/util";
 const baseUrl = USER_API
 function OrdersItems() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [orderItem, setOrderItem] = useState([]);
+  const [orderItem, setOrderItem] = useState<any>([]);
   const [itemData, setItemDta] = useState({});
   const [is_chage, setChange] = useState(false);
   const [is_statusUpdated, setStatusUpdated] = useState(false);
   const [employees, setEmployees] = useState([]);
   const [orderStatus,setOrderStatus] = useState()
 
-  const [selectEmployee, setSelectEmployee] = useState()
+  const [selectEmployee, setSelectEmployee] = useState<any>()
   const { id } = useParams()
   let total = 0;
   const restaurant = useSelector((state:any) => state.restaurentAuth);
@@ -208,7 +209,7 @@ function OrdersItems() {
               <td>
                 <button
                        className="p-1 w-28  border border-transparent text-white rounded bg-teal-500 shadow-md hover:bg-teal-400"
-                 onClick={()=>{employeeDelivery(selectEmployee,orderItem._id)}}>
+                 onClick={()=>{employeeDelivery(selectEmployee,orderItem._id )}}>
                    confirm
                 </button>
               </td>
@@ -258,8 +259,7 @@ function OrdersItems() {
     </div>
   </div>
   <div className="float- mr-3 mt-3">
-     <PAgination
-      />
+    
    </div>
 </div>
   );

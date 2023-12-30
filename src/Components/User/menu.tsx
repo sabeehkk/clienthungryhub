@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BiSolidStarHalf } from "react-icons/bi";
@@ -15,13 +17,13 @@ interface UserNavbarProps {
 
 function Menu() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [restData, setRestData] = useState();
+  const [restData, setRestData] = useState<any>();
   const [product, setProduct] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterdProducts, setFilterdProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState();
-  const [selectedPrice, setSelectedPrice] = useState();
+  const [selectedCategory, setSelectedCategory] = useState<any>();
+  const [selectedPrice, setSelectedPrice] = useState<any>();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPriceDropdownOpen, setIsPriceDropdownOpen] = useState(false);
   const [item, setsetItem] = useState();
@@ -154,7 +156,7 @@ function Menu() {
 
   const handlePriceSelection = (indx) => {
     const priceSelected = price[indx];
-    setSelectedPrice(priceSelected);
+    setSelectedPrice(priceSelected as any);
     let nearestPrice;
     if (indx < price.length - 1) {
       nearestPrice = price[indx + 1].startedAt;
@@ -187,7 +189,6 @@ function Menu() {
 
   return (
     <>
-    <UserNavbar onSearchTermChange={setSearchTerm} />
 
     <div className="bg-gray-100 container mx-auto px-5 my-element ">
       <ProductDetailModal isOpen={isModalOpen} close={closeModal} item={item} />
@@ -196,7 +197,7 @@ function Menu() {
           <div className="mb-10">
             <div className="flex justify-between items-baseline">
               <h3 className="ml-8 text-3xl font-bold italic text-black">
-                {restData?.restData.restaurantName}
+                {restData?.restData.restaurantName }
               </h3>
               <div className="border rounded-sm px-3  shadow-md bg-white">
                 <div className="flex ">
@@ -460,10 +461,9 @@ function Menu() {
       </div>
       <div className="float-center  ">
         <PAgination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange} size={undefined} filterPagination={undefined}        />
       </div>
     </div>
     </>

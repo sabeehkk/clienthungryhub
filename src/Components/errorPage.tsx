@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useRouteError } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ErrorPage = ({ path }) => {
-  const props = path;
+  // const props = path;
   // const error = useRouteError();
   return (
     <div className="w-full h-screen flex flex-col lg:flex-row items-center justify-center space-y-16 lg:space-y-0 space-x-8 2xl:space-x-0">
@@ -32,7 +32,6 @@ const ErrorPage = ({ path }) => {
           xmlns="http://www.w3.org/2000/svg"
           data-name="Layer 1"
           viewBox="0 0 1120.59226 777.91584"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
           <title>not found</title>
           <circle cx="212.59226" cy="103" r="64" fill="#ff6584"></circle>

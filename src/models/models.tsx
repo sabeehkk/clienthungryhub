@@ -37,6 +37,7 @@ export interface userInittalModel {
   }
 
   export interface AdminSideRestaurentModel {
+    restaurantName: string;
     _id:string;
       name : string;
       email:string ;
@@ -61,6 +62,7 @@ export interface userInittalModel {
   export interface profileEditModal {
         (
       data: {
+        _id:string
         name: string;
         email: string;
         phoneNumber: string | number;
