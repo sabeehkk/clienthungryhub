@@ -33,7 +33,7 @@ function GoogleAuthentication() {
         }
     }
   return (
-    <GoogleOAuthProvider clientId="1025416617728-mdbjd2n8h3ctovsre8ld0osgse2agfp2.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="492914936634-a1ivp8bmvts8jqnepbmvv2r4b3ldom4q.apps.googleusercontent.com">
     <div className='flex mt-5 mx-5 rounded-full'>
     <GoogleLogin 
         onSuccess={(credentialResponse) => {
