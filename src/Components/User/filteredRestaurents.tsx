@@ -119,7 +119,7 @@ const FilteredRestaurents = () => {
                 <div className="flex items-center justify-between">
                   <img
                     src={
-                      item.restaurent?.profilePicture || item.profilePicture
+                      item.restaurent?.profilePicture || item.profilePicture ||"https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     }
                     alt={item.name}
                     className="w-full h-44"
