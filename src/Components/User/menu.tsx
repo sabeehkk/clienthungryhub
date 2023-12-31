@@ -10,6 +10,8 @@ import { userAxios } from "../../axios/axios";
 import Pagination from "../../assets/pagination";
 import PAgination from "../../Components/pagination";
 import UserNavbar from "./userNavbar.js";
+import { ErrorMessage } from "../../utils/util.js";
+import Loading from "../../Components/loading";
 
 interface UserNavbarProps {
   onSearchTermChange: (term: string) => void;
@@ -28,10 +30,8 @@ function Menu() {
   const [isPriceDropdownOpen, setIsPriceDropdownOpen] = useState(false);
   const [item, setsetItem] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-
-  
+  const [load, setLoad] = useState(true);
   const [size, setSize] = useState(1);
-
   const price = [
     { fieled: "₹ : 0 - 50", startedAt: 0 },
     { fieled: "₹ : 50 - 100", startedAt: 50 },
@@ -40,12 +40,8 @@ function Menu() {
     { fieled: "₹ : 1000+", startedAt: 1000 },
   ];
 
-  console.log(product, "products in menu pages");
-  console.log(categories, "category in menu pages");
-
   const itemsPerPage = 5;
   const totalPages = Math.ceil(product?.length / itemsPerPage);
-
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = product?.slice(startIndex, endIndex);
@@ -84,8 +80,6 @@ function Menu() {
         const { data } = await restaurentAxios.get(
           `/getResProfile?id=${restId}`
         );
-        console.log(data, "restoProfile datas");
-
         if (data) {
           setRestData(data);
         }
@@ -101,21 +95,14 @@ function Menu() {
       .get(`/getRestaurentProduct?id=${restId}`)
       .then((response) => {
         setProduct(response.data.productData);
-        console.log(response.data.productData, "restoProducts");
-   
       })
       .catch((error) => {
-        toast.error(error.response?.data?.message, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 1500,
-        });
+        ErrorMessage(error.response?.data?.message)
       });
   }, []);
 
   const categoryData = async () => {
     const { data } = await restaurentAxios.get(`/getCategory?id=${restId}`);
-    console.log(data.categoryData, "found category data");
-
     if (data) {
       setCategories(data.categoryData);
     } else {
@@ -139,11 +126,8 @@ function Menu() {
   }, [searchTerm]);
 
   const handleCategorySelection = (ind) => {
-    console.log('handleCategorySelection is called');
-    
     const selectedCat = categories[ind];
     setSelectedCategory(selectedCat);
-
     if (selectedCat) {
       const catId = selectedCat._id;
       const catProd = product.filter((product) => product.category === catId);
@@ -163,12 +147,9 @@ function Menu() {
     } else {
       nearestPrice = 5000;
     }
-
     if (priceSelected) {
       const pricedProd = product?.map((variant) => {
-        
         const filteredVariants = variant.variants.filter((priceBetween) => {
-
           return (
             priceBetween.price >= priceSelected.startedAt &&
             priceBetween.price < nearestPrice
@@ -176,18 +157,20 @@ function Menu() {
         });
         return { ...variant, variants: filteredVariants };
       });
-      console.log(pricedProd,'selected product');
-
       togglePriceDropdown();
       setFilterdProducts(pricedProd);
     } else {
       setFilterdProducts([]);
     }
   };
-  console.log(currentItems,'current items');
-  
 
-  return (
+  useEffect(() => {
+    setLoad(false);
+  }, []);
+
+  return load ? (
+    <Loading />
+  ) : (
     <>
 
     <div className="bg-gray-100 container mx-auto px-5 my-element ">
@@ -384,9 +367,6 @@ function Menu() {
             </div>
           </div>
         </div>
-        
-        {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-        {/* {filterdProducts === "" ? ( */}
         { !filterdProducts  || filterdProducts.length === 0 ?(
   currentItems?.map((prod) => (
     <div className="pb-2" key={prod._id}>
@@ -421,7 +401,6 @@ function Menu() {
      ))
        ) : filterdProducts?.length !== 0 ? (
           filterdProducts?.map((prod) => (
-            // {(console.log('ddddddddd'))}
             <div className="p-2" key={prod._id}>
               <div className="mb-10 sm:flex sm:justify-between block">
                 <div className="">
@@ -429,7 +408,6 @@ function Menu() {
                   <h4 className="text-lg text-gray-500">{prod.description}</h4>
                   <h4 className="text-lg text-gray-500">
                     Best Price :₹ {prod.variants[0]?.offerPrice}
-                    {/* Price :₹ {prod.variant} */}
                   </h4>
                 </div>
                 <div
