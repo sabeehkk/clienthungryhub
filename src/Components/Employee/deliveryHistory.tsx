@@ -7,14 +7,13 @@ import { ErrorMessage } from "../../utils/util";
 import { useNavigate } from "react-router-dom";
 import { BiSolidChat } from "react-icons/bi";
 
-
 function DeliveryHistoryItem() {
   const [deliveryHistory, setDeliveryHistory] = useState<any>();
-  const employee = useSelector((state:any) => state.employeeAuth);
+  const employee = useSelector((state: any) => state.employeeAuth);
   const navigate = useNavigate();
 
   const ChatIcon = () => {
-    return <BiSolidChat style={{ fontSize: "20px "   }} />;
+    return <BiSolidChat style={{ fontSize: "20px " }} />;
   };
 
   useEffect(() => {
@@ -37,14 +36,12 @@ function DeliveryHistoryItem() {
       return e.orderStatus == "Packed";
     });
     if (productId && orderStatus && orderId) {
-      restaurentAxios
-        .patch("/updateDeliveryStatus", {
-          prodId: productId._id,
-          orderId: orderId,
-          orderStatus: orderStatus,
-          employeeId: employee.employee._id,
-        })
-      
+      restaurentAxios.patch("/updateDeliveryStatus", {
+        prodId: productId._id,
+        orderId: orderId,
+        orderStatus: orderStatus,
+        employeeId: employee.employee._id,
+      });
     } else {
       return ErrorMessage("no data available");
     }
@@ -99,7 +96,7 @@ function DeliveryHistoryItem() {
                           delivery._id
                         )
                       }
-                      disabled={delivery.item.orderStatus === "Delivered"}
+                      // disabled={delivery.item.orderStatus === "Delivered"}
                     >
                       <option
                         value="Out of delivery"
@@ -117,13 +114,13 @@ function DeliveryHistoryItem() {
                   </div>
                 </div>
                 <div>
-                <button
+                  <button
                     className="p-1 w-20 ml-5 border border-transparent text-white rounded bg-teal-500 shadow-md hover:bg-teal-400 flex items-center"
                     onClick={() => {
                       handleChat(delivery._id);
                     }}
                   >
-                     <ChatIcon />  <span className="ml-2">Chat</span>
+                    <ChatIcon /> <span className="ml-2">Chat</span>
                   </button>
                 </div>
                 <div className="bg-white text-white rounded-full p-2">
