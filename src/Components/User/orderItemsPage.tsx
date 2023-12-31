@@ -8,6 +8,7 @@ import OrderTrack from "../../assets/orderTrack";
 import { useNavigate, useParams } from "react-router-dom";
 // import PAgination from "../../Components/pagination";
 import { SuccessMessage, SwalAlert } from "../../utils/util";
+import { BiSolidChat } from "react-icons/bi";
 
 function OrderItems() {
   let total = 0;
@@ -27,6 +28,9 @@ function OrderItems() {
   // const itemsPerPage = 5;
   // const startIndex = (currentPage - 1) * itemsPerPage;
   // const endIndex = startIndex + itemsPerPage;
+  const ChatIcon = () => {
+    return <BiSolidChat style={{ fontSize: "20px "   }} />;
+  };
   const user = useSelector((state:any) => state.userAuth);
   useEffect(() => {
     userAxios.get(`/orderItems?id=${ordId}`).then((response) => {
@@ -154,12 +158,12 @@ function OrderItems() {
                       </td>
                       <td>
                         <button
-                          className="p-1 w-20  border border-transparent text-white rounded bg-teal-500 shadow-md hover:bg-teal-400"
+                          className="p-1 w-20 ml-5 border border-transparent text-white rounded bg-teal-500 shadow-md hover:bg-teal-400 flex items-center"
                           onClick={() => {
                             handleChat();
                           }}
                         >
-                          Chat
+                          <ChatIcon />  <span className="ml-2">Chat</span>
                         </button>
                       </td>
                     </tr>
