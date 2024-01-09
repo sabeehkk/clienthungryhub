@@ -36,11 +36,8 @@ const UserNavbar = () => {
     }
   };
   const filteredFoods = foods.filter((food) =>
-    searchTerm
-    .toLowerCase()
-    .split(' ')
-    .every((word) => food.productName.toLowerCase().includes(word))
-    );
+    food.productName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
     <>
       <div
@@ -148,6 +145,8 @@ const UserNavbar = () => {
       </div>
       {searchTerm && (
         <div className="max-w-[1640px] m-auto px-4 py-12">
+          {/* {Filter Row} */}
+          {/* {display Images} */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
             {filteredFoods?.map((item, index) => (
               <div
@@ -155,7 +154,7 @@ const UserNavbar = () => {
                 className="border cursor-pointer shadow-lg rounded-lg hover:scale-105 duration-300"
               >
                 <img
-                  src={item?.images?.[0]}
+                  src={item?.images?.[0]} // Optional chaining
                   alt={item?.productName}
                   className="w-full h-[200px] object-cover rounded-t-lg"
                 />
