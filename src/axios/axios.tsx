@@ -39,7 +39,7 @@ const createRoleSpecificAxiosInstance = (tokenName, rolePath) => {
         error.response.data.message ===
           "Access Denied: Your account has been temporarily blocked"
           
-      ) {d
+      ) {
         // return ErrorMessage(error.response.data.message)
         // console.log('axios is working')
         localStorage.removeItem(tokenName);
