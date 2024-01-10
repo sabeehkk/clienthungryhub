@@ -52,7 +52,7 @@ function DeliveryHistoryItem() {
   return (
     <div>
       <h2 className="text-2xl font-bold mb-4">Delivery History</h2>
-      {deliveryHistory?.ordersDetails.map((delivery) => (
+      {deliveryHistory?.ordersDetails.map((delivery:any) => (
         <Fragment key={delivery._id}>
           {delivery.item.map((deliveryItem: any) =>
             (deliveryItem &&
@@ -78,9 +78,6 @@ function DeliveryHistoryItem() {
                     <strong>Customer:</strong> {delivery.userId.name}
                   </div>
                   <div>
-                    {/* <strong>Items Delivered:</strong> {deliveryItem.items.join(', ')} */}
-                  </div>
-                  <div>
                     <strong>Feedback:</strong> {deliveryItem.feedback}
                   </div>
                 </div>
@@ -89,14 +86,13 @@ function DeliveryHistoryItem() {
                     <select
                       className="bg-blue-500 border-none text-white cursor-pointer p-1 rounded"
                       value={deliveryItem.orderStatus}
-                      onChange={(e) =>
+                      onChange={(e) => 
                         updateDeliveryStatus(
                           delivery.item,
                           e.target.value,
                           delivery._id
                         )
                       }
-                      // disabled={delivery.item.orderStatus === "Delivered"}
                     >
                       <option
                         value="Out of delivery"

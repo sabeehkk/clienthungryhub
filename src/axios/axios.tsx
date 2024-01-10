@@ -1,7 +1,5 @@
 import axios from "axios";
 import { ErrorMessage } from "../utils/util";
-// import { ErrorMessage } from "../utils/utils";
-
 // Define base URL from environment variables
 const VITE_USER_BACKEND_URL = " https://hungryhubbackend.evolux.cloud"
 
@@ -38,7 +36,6 @@ const createRoleSpecificAxiosInstance = (tokenName, rolePath) => {
           error.response.data.message === "Unauthorized") ||
         error.response.data.message ===
           "Access Denied: Your account has been temporarily blocked"
-          
       ) {
         // return ErrorMessage(error.response.data.message)
         // console.log('axios is working')
