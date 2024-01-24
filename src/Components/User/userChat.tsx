@@ -104,7 +104,7 @@ function UserChat() {
             <div className="relative bg-gray-100 flex items-center p-3 border-b border-gray-300">
               <img
                 className="object-cover w-10 h-10 rounded-full"
-                src={Userdetails.profilePicture}
+                src={Userdetails.profilePicture||"https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                 alt="username"
               />
               <span className="block ml-2 font-bold text-gray-600">
