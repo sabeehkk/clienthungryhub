@@ -14,3 +14,5 @@ export const createChatAPI = async (userId, ownerId) => {
     await chatAxios.post(`/`, { userId, ownerId});
   } catch (error) {}
 };
+
+export const GetChatsAPI = async

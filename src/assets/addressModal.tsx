@@ -152,7 +152,7 @@ const userdata = useSelector((state:any) => state.userAuth);
 
         <div className="modal-footer p-3 bg-gray-800 items-center justify-center flex">
           <button
-            className="text-cherry-Red font-bold text-lg py-2 px-4 rounded"
+            className="bg-gray-300 text-black border-none font-bold text-lg py-2 px-4 rounded"
             onClick={() => handleSave()}
             disabled={address === null}
           >

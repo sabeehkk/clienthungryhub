@@ -1,16 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { Fragment, useEffect, useState } from "react";
-import { employeeAxios, userAxios } from "../../axios/axios";
+import { employeeAxios } from "../../axios/axios";
 import { restaurentAxios } from "../../axios/axios";
 import { useSelector } from "react-redux";
 import { ErrorMessage } from "../../utils/util";
 import { useNavigate } from "react-router-dom";
+import { BiSolidChat } from "react-icons/bi";
+
 
 function DeliveryHistoryItem() {
   const [deliveryHistory, setDeliveryHistory] = useState<any>();
   const employee = useSelector((state:any) => state.employeeAuth);
   const navigate = useNavigate();
 
+  const ChatIcon = () => {
+    return <BiSolidChat style={{ fontSize: "20px "   }} />;
+  };
+  
   useEffect(() => {
     if (!employee.employee || !employee.employee._id) {
       return;
@@ -93,7 +99,7 @@ function DeliveryHistoryItem() {
                           delivery._id
                         )
                       }
-                      disabled={delivery.item.orderStatus === "Delivered"}
+                      // disabled={delivery.item.orderStatus === "Delivered"}
                     >
                       <option
                         value="Out of delivery"
@@ -108,16 +114,46 @@ function DeliveryHistoryItem() {
                         Delivered
                       </option>
                     </select>
+                    {/* <select
+                      className="bg-blue-500 border-none text-white cursor-pointer p-1 rounded"
+                      value={deliveryItem.orderStatus}
+                      onChange={(e) =>
+                        updateDeliveryStatus(delivery.item, e.target.value, delivery._id)
+                      }
+                    >
+                      <option
+                        value="Out of delivery"
+                        className={
+                          deliveryItem.orderStatus === "Out of delivery"
+                            ? "bg-blue-500 text-white"
+                            : "bg-white text-black hover:bg-gray-400"
+                        }
+                      >
+                        Out of delivery
+                      </option>
+                      <option
+                        value="Delivered"
+                        className={
+                          deliveryItem.orderStatus === "Delivered"
+                            ? "bg-blue-500 text-white"
+                            : "bg-white text-black hover:bg-gray-400"
+                        }
+                      >
+                        Delivered
+                      </option>
+                    </select> */}
+
                   </div>
                 </div>
                 <div>
                   <button
-                    className="p-1 w-20 ml-5 border border-transparent text-white rounded bg-teal-500 shadow-md hover:bg-teal-400"
+                    className="p-1 w-20 ml-5 border border-transparent text-white rounded bg-teal-500 shadow-md hover:bg-teal-400 flex items-center"
                     onClick={() => {
                       handleChat(delivery._id);
                     }}
                   >
-                    Chat
+                     <ChatIcon />  <span className="ml-2">Chat</span>
+              
                   </button>
                 </div>
                 <div className="bg-white text-white rounded-full p-2">

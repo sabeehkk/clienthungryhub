@@ -171,11 +171,10 @@ function OrderItems() {
                     address={orderItem?.address}
                   />
                 </Fragment>
-                <tr className="px-6 py-2 whitespace-nowra justify-between items-end">
-                  <td></td>
-                  <td></td>
-                  <td className="text-lg font-semibold">Total:</td>
-                  <td className="text-end text-lg font-semibold">{total}</td>
+                <tr className="  whitespace-nowra  items-start">
+                 <td></td>
+                  <td className="pl-64 text-start text-lg font-semibold " >Total:</td>
+                  <td className="text-start text-lg font-semibold ">{total}</td>
                 </tr>
               </tbody>
             </table>

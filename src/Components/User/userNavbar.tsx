@@ -35,9 +35,13 @@ const UserNavbar = () => {
       console.error("Error fetching data:", error);
     }
   };
-  const filteredFoods = foods.filter((food) =>
-    food.productName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    const filteredFoods = foods.filter((food) =>
+    searchTerm
+    .toLowerCase()
+    .split(' ')
+    .every((word) => food.productName.toLowerCase().includes(word))
+    );
+
   return (
     <>
       <div
