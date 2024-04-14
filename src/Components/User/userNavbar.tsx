@@ -35,12 +35,20 @@ const UserNavbar = () => {
       console.error("Error fetching data:", error);
     }
   };
+<<<<<<< HEAD
+    const filteredFoods = foods.filter((food) =>
+=======
   const filteredFoods = foods.filter((food) =>
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
     searchTerm
     .toLowerCase()
     .split(' ')
     .every((word) => food.productName.toLowerCase().includes(word))
     );
+<<<<<<< HEAD
+
+=======
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
   return (
     <>
       <div

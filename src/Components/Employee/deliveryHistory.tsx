@@ -1,11 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+<<<<<<< HEAD
+import React, { Fragment, useEffect, useState } from "react";
+=======
 import { Fragment, useEffect, useState } from "react";
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
 import { employeeAxios } from "../../axios/axios";
 import { restaurentAxios } from "../../axios/axios";
 import { useSelector } from "react-redux";
 import { ErrorMessage } from "../../utils/util";
 import { useNavigate } from "react-router-dom";
 import { BiSolidChat } from "react-icons/bi";
+<<<<<<< HEAD
+
+=======
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
 
 function DeliveryHistoryItem() {
   const [deliveryHistory, setDeliveryHistory] = useState<any>();
@@ -13,9 +21,15 @@ function DeliveryHistoryItem() {
   const navigate = useNavigate();
 
   const ChatIcon = () => {
+<<<<<<< HEAD
+    return <BiSolidChat style={{ fontSize: "20px "   }} />;
+  };
+  
+=======
     return <BiSolidChat style={{ fontSize: "20px " }} />;
   };
 
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
   useEffect(() => {
     if (!employee.employee || !employee.employee._id) {
       return;
@@ -93,6 +107,10 @@ function DeliveryHistoryItem() {
                           delivery._id
                         )
                       }
+<<<<<<< HEAD
+                      // disabled={delivery.item.orderStatus === "Delivered"}
+=======
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
                     >
                       <option
                         value="Out of delivery"
@@ -107,6 +125,35 @@ function DeliveryHistoryItem() {
                         Delivered
                       </option>
                     </select>
+                    {/* <select
+                      className="bg-blue-500 border-none text-white cursor-pointer p-1 rounded"
+                      value={deliveryItem.orderStatus}
+                      onChange={(e) =>
+                        updateDeliveryStatus(delivery.item, e.target.value, delivery._id)
+                      }
+                    >
+                      <option
+                        value="Out of delivery"
+                        className={
+                          deliveryItem.orderStatus === "Out of delivery"
+                            ? "bg-blue-500 text-white"
+                            : "bg-white text-black hover:bg-gray-400"
+                        }
+                      >
+                        Out of delivery
+                      </option>
+                      <option
+                        value="Delivered"
+                        className={
+                          deliveryItem.orderStatus === "Delivered"
+                            ? "bg-blue-500 text-white"
+                            : "bg-white text-black hover:bg-gray-400"
+                        }
+                      >
+                        Delivered
+                      </option>
+                    </select> */}
+
                   </div>
                 </div>
                 <div>
@@ -116,7 +163,12 @@ function DeliveryHistoryItem() {
                       handleChat(delivery._id);
                     }}
                   >
+<<<<<<< HEAD
+                     <ChatIcon />  <span className="ml-2">Chat</span>
+              
+=======
                     <ChatIcon /> <span className="ml-2">Chat</span>
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
                   </button>
                 </div>
                 <div className="bg-white text-white rounded-full p-2">

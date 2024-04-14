@@ -1,5 +1,5 @@
-export const USER_API = "https://hungryhubbackend.evolux.cloud"
+export const USER_API = "http://localhost:3000"
 
-export const RESTAURENT_API = "https://hungryhubbackend.evolux.cloud/restaurent"
+export const RESTAURENT_API = "http://localhost:3000/restaurent"
 
-export const EMPLOYEE_API =  "https://hungryhubbackend.evolux.cloud/employee"
+export const EMPLOYEE_API =  "http://localhost:3000/employee"
