@@ -1,22 +1,35 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+<<<<<<< HEAD
 import React, { Fragment, useEffect, useState } from "react";
+=======
+import { Fragment, useEffect, useState } from "react";
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
 import { employeeAxios } from "../../axios/axios";
 import { restaurentAxios } from "../../axios/axios";
 import { useSelector } from "react-redux";
 import { ErrorMessage } from "../../utils/util";
 import { useNavigate } from "react-router-dom";
 import { BiSolidChat } from "react-icons/bi";
+<<<<<<< HEAD
 
+=======
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
 
 function DeliveryHistoryItem() {
   const [deliveryHistory, setDeliveryHistory] = useState<any>();
-  const employee = useSelector((state:any) => state.employeeAuth);
+  const employee = useSelector((state: any) => state.employeeAuth);
   const navigate = useNavigate();
 
   const ChatIcon = () => {
+<<<<<<< HEAD
     return <BiSolidChat style={{ fontSize: "20px "   }} />;
   };
   
+=======
+    return <BiSolidChat style={{ fontSize: "20px " }} />;
+  };
+
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
   useEffect(() => {
     if (!employee.employee || !employee.employee._id) {
       return;
@@ -37,14 +50,12 @@ function DeliveryHistoryItem() {
       return e.orderStatus == "Packed";
     });
     if (productId && orderStatus && orderId) {
-      restaurentAxios
-        .patch("/updateDeliveryStatus", {
-          prodId: productId._id,
-          orderId: orderId,
-          orderStatus: orderStatus,
-          employeeId: employee.employee._id,
-        })
-      
+      restaurentAxios.patch("/updateDeliveryStatus", {
+        prodId: productId._id,
+        orderId: orderId,
+        orderStatus: orderStatus,
+        employeeId: employee.employee._id,
+      });
     } else {
       return ErrorMessage("no data available");
     }
@@ -55,7 +66,7 @@ function DeliveryHistoryItem() {
   return (
     <div>
       <h2 className="text-2xl font-bold mb-4">Delivery History</h2>
-      {deliveryHistory?.ordersDetails.map((delivery) => (
+      {deliveryHistory?.ordersDetails.map((delivery:any) => (
         <Fragment key={delivery._id}>
           {delivery.item.map((deliveryItem: any) =>
             (deliveryItem &&
@@ -81,9 +92,6 @@ function DeliveryHistoryItem() {
                     <strong>Customer:</strong> {delivery.userId.name}
                   </div>
                   <div>
-                    {/* <strong>Items Delivered:</strong> {deliveryItem.items.join(', ')} */}
-                  </div>
-                  <div>
                     <strong>Feedback:</strong> {deliveryItem.feedback}
                   </div>
                 </div>
@@ -92,14 +100,17 @@ function DeliveryHistoryItem() {
                     <select
                       className="bg-blue-500 border-none text-white cursor-pointer p-1 rounded"
                       value={deliveryItem.orderStatus}
-                      onChange={(e) =>
+                      onChange={(e) => 
                         updateDeliveryStatus(
                           delivery.item,
                           e.target.value,
                           delivery._id
                         )
                       }
+<<<<<<< HEAD
                       // disabled={delivery.item.orderStatus === "Delivered"}
+=======
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
                     >
                       <option
                         value="Out of delivery"
@@ -152,8 +163,12 @@ function DeliveryHistoryItem() {
                       handleChat(delivery._id);
                     }}
                   >
+<<<<<<< HEAD
                      <ChatIcon />  <span className="ml-2">Chat</span>
               
+=======
+                    <ChatIcon /> <span className="ml-2">Chat</span>
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
                   </button>
                 </div>
                 <div className="bg-white text-white rounded-full p-2">

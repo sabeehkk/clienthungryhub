@@ -8,7 +8,7 @@ import {
   BiCategory,
 } from "react-icons/bi";
 import { AiOutlinePlusSquare } from "react-icons/ai";
-import { MdSettingsApplications, MdOutlineFastfood } from "react-icons/md";
+import {  MdOutlineFastfood } from "react-icons/md";
 const App = () => {
   const [open, setOpen] = useState(true);
   const Menus = [

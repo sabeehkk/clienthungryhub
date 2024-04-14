@@ -352,7 +352,6 @@ const AddProduct: React.FC = () => {
                 {previewImages.length > 0 && (
                   <label htmlFor="profImage" className="w-1/4 p-2 block relative"></label>
                 )}
-                
               </div>
               <button
                 className= "bg-teal-500 text-white border-neutral-50  hover:text-black"

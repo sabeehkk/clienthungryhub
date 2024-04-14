@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { BsFillCartFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
-import { FaUserFriends, FaWallet } from "react-icons/fa";
-import { MdFavorite, MdHelp } from "react-icons/md";
+import { FaUserFriends } from "react-icons/fa";
+import { MdFavorite } from "react-icons/md";
 import { MdExitToApp } from "react-icons/md";
 import { MdHome } from "react-icons/md";
 import { BiFoodMenu } from "react-icons/bi";
@@ -35,13 +35,20 @@ const UserNavbar = () => {
       console.error("Error fetching data:", error);
     }
   };
+<<<<<<< HEAD
     const filteredFoods = foods.filter((food) =>
+=======
+  const filteredFoods = foods.filter((food) =>
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
     searchTerm
     .toLowerCase()
     .split(' ')
     .every((word) => food.productName.toLowerCase().includes(word))
     );
+<<<<<<< HEAD
 
+=======
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
   return (
     <>
       <div
@@ -149,8 +156,6 @@ const UserNavbar = () => {
       </div>
       {searchTerm && (
         <div className="max-w-[1640px] m-auto px-4 py-12">
-          {/* {Filter Row} */}
-          {/* {display Images} */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
             {filteredFoods?.map((item, index) => (
               <div
@@ -158,7 +163,7 @@ const UserNavbar = () => {
                 className="border cursor-pointer shadow-lg rounded-lg hover:scale-105 duration-300"
               >
                 <img
-                  src={item?.images?.[0]} // Optional chaining
+                  src={item?.images?.[0]}
                   alt={item?.productName}
                   className="w-full h-[200px] object-cover rounded-t-lg"
                 />

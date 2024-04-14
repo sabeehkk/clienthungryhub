@@ -5,8 +5,7 @@ import { RiFileList3Fill } from 'react-icons/ri'
 import { FaShopify } from 'react-icons/fa'
 import { BiSolidUserAccount } from 'react-icons/bi'
 import { employeeAxios } from '../../axios/axios';
-import PieChart from '../../assets/pieChart';
-import Chart from '../../assets/chart';
+
 
 const RestaurantDashboard = () => {
   const [dashBordDatas,setDashBoardDatas] = useState<any>()

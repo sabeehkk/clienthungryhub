@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Fragment, useEffect, useState } from "react";
@@ -7,9 +8,13 @@ import PAgination from "../../Components/pagination";
 import { userAxios } from "../../axios/axios";
 
 function Orders() {
+<<<<<<< HEAD
   // eslint-disable-next-line prefer-const
   let total = 0;
 
+=======
+  let total = 0;
+>>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
   const [orderItem, setOrderItem] = useState([]);
   const [is_chage, setChange] = useState(false);
 
