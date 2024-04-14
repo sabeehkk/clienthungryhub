@@ -10,7 +10,7 @@ import RestaurentRoute from "./route/restaurentRoutes";
 import employeeRoutes from "./route/employeeRoutes";
 
 const persistor = persistStore(store);
-
+// CHANGES OCCURED---------------------------
 function App() {
   const router = createBrowserRouter([ UserRoute,AdminRoute,RestaurentRoute,employeeRoutes]);
   return (
