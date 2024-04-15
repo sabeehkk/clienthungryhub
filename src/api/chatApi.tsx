@@ -15,4 +15,3 @@ export const createChatAPI = async (userId, ownerId) => {
   } catch (error) {}
 };
 
-export const GetChatsAPI = async

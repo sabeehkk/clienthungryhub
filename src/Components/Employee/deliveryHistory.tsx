@@ -1,19 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-<<<<<<< HEAD
-import React, { Fragment, useEffect, useState } from "react";
-=======
 import { Fragment, useEffect, useState } from "react";
->>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
 import { employeeAxios } from "../../axios/axios";
 import { restaurentAxios } from "../../axios/axios";
 import { useSelector } from "react-redux";
 import { ErrorMessage } from "../../utils/util";
 import { useNavigate } from "react-router-dom";
 import { BiSolidChat } from "react-icons/bi";
-<<<<<<< HEAD
 
-=======
->>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
 
 function DeliveryHistoryItem() {
   const [deliveryHistory, setDeliveryHistory] = useState<any>();
@@ -21,15 +14,9 @@ function DeliveryHistoryItem() {
   const navigate = useNavigate();
 
   const ChatIcon = () => {
-<<<<<<< HEAD
-    return <BiSolidChat style={{ fontSize: "20px "   }} />;
-  };
-  
-=======
     return <BiSolidChat style={{ fontSize: "20px " }} />;
   };
 
->>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
   useEffect(() => {
     if (!employee.employee || !employee.employee._id) {
       return;
@@ -107,10 +94,6 @@ function DeliveryHistoryItem() {
                           delivery._id
                         )
                       }
-<<<<<<< HEAD
-                      // disabled={delivery.item.orderStatus === "Delivered"}
-=======
->>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
                     >
                       <option
                         value="Out of delivery"
@@ -163,12 +146,7 @@ function DeliveryHistoryItem() {
                       handleChat(delivery._id);
                     }}
                   >
-<<<<<<< HEAD
-                     <ChatIcon />  <span className="ml-2">Chat</span>
-              
-=======
                     <ChatIcon /> <span className="ml-2">Chat</span>
->>>>>>> bb3ae110b66a843f5b5ccd74a538a55718b6b4e3
                   </button>
                 </div>
                 <div className="bg-white text-white rounded-full p-2">
