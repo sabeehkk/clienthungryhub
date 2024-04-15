@@ -1,5 +1,3 @@
-import axios from "axios";
-import { ErrorMessage } from "../utils/util";
 import { employeeAxios } from "../axios/axios";
 
 export const forgotPassword = async (email) => {
