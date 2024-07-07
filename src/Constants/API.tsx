@@ -1,5 +1,5 @@
-export const USER_API = "https://backendhungryhub.molla.cloud"
+export const USER_API = "https://hungryhub.evolux.cloud"
 
-export const RESTAURENT_API = "https://backendhungryhub.molla.cloud/restaurent"
+export const RESTAURENT_API = "https://hungryhub.evolux.cloud/restaurent"
 
-export const EMPLOYEE_API =  "https://backendhungryhub.molla.cloud/employee"
+export const EMPLOYEE_API =  "https://hungryhub.evolux.cloud/employee"

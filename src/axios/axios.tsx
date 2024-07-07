@@ -2,7 +2,7 @@ import axios from "axios";
 import { ErrorMessage } from "../utils/util";
 // Define base URL from environment variables
 // const VITE_USER_BACKEND_URL = " https://hungryhubbackend.evolux.cloud"
-const VITE_USER_BACKEND_URL = " https://backendhungryhub.molla.cloud"
+const VITE_USER_BACKEND_URL = " https://hungryhub.evolux.cloud"
 
 // Define role-specific paths
 const userPath = "";
