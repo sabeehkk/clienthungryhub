@@ -36,6 +36,9 @@ const handleSubmit = async (e: SyntheticEvent)=>{
   }
 }
   return (
+    <>
+    <h2 ><span>email :</span> pumpkin@gmail.com</h2>
+    <h2><span>Password :</span> Asdfghj1@*</h2>
     <div className=" min-h-screen  flex items-center justify-center bg-white ">
     <div className="bg-white p-6 rounded-lg shadow w-96 mb-24">
       <h2 className="my-heading">Restaurent Signing </h2>
@@ -52,7 +55,7 @@ const handleSubmit = async (e: SyntheticEvent)=>{
             placeholder="Enter your email"
             value={email}
             onChange={(e)=>setEmail(e.target.value)}
-          />
+            />
         </div>
         <div className="mb-4">
           <label htmlFor="password" className="block text-gray-600 font-bold">
@@ -79,7 +82,7 @@ const handleSubmit = async (e: SyntheticEvent)=>{
           <Link
                 to="/restaurent/forgot-password"
                 className=" btn font-medium text-black-600 hover:text-black-900 flex justify-center"
-              >
+                >
                 Forgot Your Password
               </Link>
               <Link
@@ -93,6 +96,7 @@ const handleSubmit = async (e: SyntheticEvent)=>{
       </form>
     </div>
   </div>
+                </>
   )
 }
 

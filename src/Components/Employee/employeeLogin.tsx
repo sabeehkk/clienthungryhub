@@ -33,6 +33,9 @@ function EmployeeLogin() {
     }
   };
   return (
+    <>
+      <h2 ><span>email :</span> muhammedsabeehkk2@gmail.com</h2>
+      <h2><span>Password :</span> Asdfghj1@*</h2>
     <div className=" min-h-screen  flex items-center justify-center bg-white ">
       <div className="bg-white p-6 rounded-lg shadow w-96 mb-24">
         <h2 className="my-heading">Signing </h2>
@@ -63,26 +66,26 @@ function EmployeeLogin() {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            />
+              />
           </div>
           <div className="text-center">
             <button
               type="submit"
               className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-teal-500 rounded-md hover:bg-teal-600 focus:outline-none focus:bg-teal-500"
-            >
+              >
               Login
             </button>
             <div className="text-sm md:flex md:justify-between mt-2">
             <Link
                 to="/employee/forgot-password"
                 className=" btn font-medium text-black-600 hover:text-black-900 flex justify-center"
-              >
+                >
                 Forgot Your Password
               </Link>
               <Link
                 to="/employee/signup"
                 className="btn font-medium text-black-600 hover:text-black-900 flex justify-center"
-              >
+                >
                 Create your Employee account
               </Link>
             </div>
@@ -90,6 +93,7 @@ function EmployeeLogin() {
         </form>
       </div>
     </div>
+                  </>
   );
 }
 
