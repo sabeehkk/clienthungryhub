@@ -37,7 +37,7 @@ const handleSubmit = async (e: SyntheticEvent)=>{
 }
   return (
     <>
-    <h2 ><span>email :</span> pumpkin@gmail.com</h2>
+    <h2 ><span>email :</span> pumbkin@gmail.com</h2>
     <h2><span>Password :</span> Asdfghj1@*</h2>
     <div className=" min-h-screen  flex items-center justify-center bg-white ">
     <div className="bg-white p-6 rounded-lg shadow w-96 mb-24">
