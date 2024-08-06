@@ -34,8 +34,8 @@ function EmployeeLogin() {
   };
   return (
     <>
-      <h2 ><span>email :</span> muhammedsabeehkk2@gmail.com</h2>
-      <h2><span>Password :</span> Asdfghj1@*</h2>
+      {/* <h2 ><span>email :</span> muhammedsabeehkk2@gmail.com</h2>
+      <h2><span>Password :</span> Asdfghj1@*</h2> */}
     <div className=" min-h-screen  flex items-center justify-center bg-white ">
       <div className="bg-white p-6 rounded-lg shadow w-96 mb-24">
         <h2 className="my-heading">Signing </h2>
