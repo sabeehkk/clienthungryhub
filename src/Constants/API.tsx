@@ -1,5 +1,5 @@
-export const USER_API = "https://hungryhub.evolux.cloud"
+export const USER_API = "https://backend-hungry-hub.vercel.app"
 
-export const RESTAURENT_API = "https://hungryhub.evolux.cloud/restaurent"
+export const RESTAURENT_API = "https://backend-hungry-hub.vercel.app/restaurent"
 
-export const EMPLOYEE_API =  "https://hungryhub.evolux.cloud/employee"
+export const EMPLOYEE_API =  "https://backend-hungry-hub.vercel.app/employee"
